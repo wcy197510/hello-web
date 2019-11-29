@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery-demo</title>
+</head>
+<body>
+
+<div id="app">
+    <div id="test">
+        <h5>Hello JQuery</h5>
+    </div>
+    <button id="add">
+        add line
+    </button>
+</div>
+
+<script src="../node_modules/jquery/dist/jquery.js"></script>
+
+<script>
+    var count = 0;
+
+    $('#add').click(function () {
+        $('#test').append("<h5>"+(++count)+"</h5>");
+    });
+</script>
+</body>
+</html>
