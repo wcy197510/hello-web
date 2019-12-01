@@ -11,7 +11,7 @@
 //数组
 
 //数组排序
-echo 1;
+
 //if...else
 
 //switch
