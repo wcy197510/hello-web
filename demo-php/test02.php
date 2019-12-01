@@ -49,8 +49,8 @@ function array_operator()
 {
     $x = array('a' => 'red', 'b' => 'yellow');
     $y = array('c' => 'green');
-    $m = array(1 => 'green',2=>'blue');
-    $n = array(2=>'blue',1 => 'green');
+    $m = array(1 => 'green', 2 => 'blue');
+    $n = array(2 => 'blue', 1 => 'green');
     //x+y x和y的集合
     var_dump($x + $y);
     //x!=y,x<>y,x!==y x与y不相等，返回true
