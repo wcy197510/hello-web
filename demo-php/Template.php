@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>php-demo</title>
+</head>
+<body>
+<p><a href="index.php">返回</a></p>
+
 <?php
 
 //用interface定义接口,接口中的方法必须是public
@@ -95,3 +104,6 @@ echo $obj->getHtml('Hello World!').'<br>';
 $class1 = new class1();
 $class1->printOut();
 ?>
+
+</body>
+</html>

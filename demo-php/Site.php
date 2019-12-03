@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>php-demo</title>
+</head>
+<body>
+<p><a href="index.php">返回</a></p>
+
 <?php
 
 //面向对象
@@ -45,3 +54,6 @@ $google->getUrl();
 $google->getTitle();
 
 ?>
+
+</body>
+</html>
