@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>php-demo</title>
+</head>
+<body>
+<!--表单-->
+
+<!--$_POST变量-->
+<!--表单发送的信息，对任何人不可见-->
+<form action="test05_welcom.php" method="post">
+    名字：<input type="text" name="fname">
+    年龄：<input type="text" name="age">
+    <input type="submit" name="提交">
+</form>
+<!--$_GET变量-->
+<!--表单发送的信息对任何人可见（显示在浏览器的地址栏）-->
+<form action="test05_welcom.php" method="get">
+    名字：<input type="text" name="fname">
+    年龄：<input type="text" name="age">
+    <input type="submit" name="提交">
+</form>
+
+</body>
+</html>

@@ -14,6 +14,8 @@
 <p><a href="Site.php">Class_Base</a></p>
 <p><a href="MyClass.php">Class_AccessControl</a></p>
 <p><a href="Template.php">Class_Others</a></p>
+<p><a href="test05.html">demo 6.0</a></p>
+<p><a href="test05.php">demo 6.1</a></p>
 
 </body>
 </html>
