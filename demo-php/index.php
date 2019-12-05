@@ -17,6 +17,7 @@
 <p><a href="test05.html">demo 6.0</a></p>
 <p><a href="test05.php">demo 6.1</a></p>
 <p><a href="test06.php">demo 7</a></p>
+<p><a href="test07.php">demo 8</a></p>
 
 </body>
 </html>
