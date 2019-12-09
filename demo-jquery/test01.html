@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery-demo</title>
+</head>
+<body>
+
+<p><a href="index.html">返回</a></p>
+
+<h2 class="test">这是一个标题</h2>
+<p>双击鼠标左键我就消失</p>
+<p class="test">这是一个段落</p>
+<p id="test">这是另一个段落</p>
+<p id="p1">鼠标指针进入此处，会看到弹窗</p>
+<div>
+    <label>Name:</label>
+    <input type="text" name="fullname"><br><br>
+    <label>Email:</label>
+    <input type="text" name="email"><br><br>
+</div>
+<button>点我</button>
+
+<script src="../node_modules/jquery/dist/jquery.js"></script>
+<!--JQuery选择器-->
+
+<!--元素选择器-->
+<!--
+<script>
+    $(document).ready(function () {
+        $("button").click(function () {
+            $("p").hide();
+        });
+    });
+
+</script>
+-->
+<!--id选择器-->
+<!--
+<script>
+    $(document).ready(function () {
+        $("button").click(function () {
+            $("#test").hide();
+        });
+    });
+</script>
+-->
+<!--Class选择器-->
+<script>
+    $(document).ready(function () {
+        $("button").click(function () {
+            $(".test").hide();
+        });
+    });
+</script>
+
+<!--事件-->
+<script>
+    $(document).ready(function () {
+        $("p").dblclick(function () {
+            $(this).hide();
+        });
+
+        $('#p1').hover(function () {
+                alert("你进入了p1");
+            },
+            function () {
+                alert("你离开了p1");
+            });
+
+        $("input").focus(function () {
+            $(this).css("background-color","#cccccc");
+        });
+        $("input").blur(function () {
+            $(this).css("background-color","#ffffff");
+        });
+
+    });
+</script>
+
+
+</body>
+</html>
