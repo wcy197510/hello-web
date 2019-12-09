@@ -18,6 +18,10 @@ if ($_FILES["file"]["error"] > 0) {
     echo "文件临时存储的位置：".$_FILES["file"]["tmp_name"]."<br>";
 
 //将文件上传到upload目录下
+    if(!is_dir("upload"))
+    {
+        mkdir("upload");
+    }
     if (file_exists("upload/".$_FILES["file"]["name"])) {
         echo $_FILES["file"]["name"]."文件已存在。";
     } else {

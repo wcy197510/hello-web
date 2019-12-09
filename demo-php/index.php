@@ -19,6 +19,7 @@
 <p><a href="test06.php">demo 7</a></p>
 <p><a href="test07.php">demo 8</a></p>
 <p><a href="test08.php">demo 9</a></p>
-
+<p><a href="test09.php">demo 10</a></p>
+<p><a href="customException.php">demo 10.1</a></p>
 </body>
 </html>
