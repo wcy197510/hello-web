@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery-demo</title>
+
+</head>
+<body>
+
+<p><a href="index.html">返回</a></p>
+
+<div>
+    <button id="bt1">发送一个HTTP GET请求并获取返回结果</button>
+    <br><br>
+</div>
+
+<div>
+    <button id="bt2">发送一个HTTP POST请求并获取返回结果</button>
+</div>
+
+<div>
+    <p id="p">这是一个段落</p>
+    <button id="bt3">点我</button>
+</div>
+
+<script src="../node_modules/jquery/dist/jquery.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $("#bt1").click(function () {
+            $.get("demo-test-get.php", function (data, status) {
+                alert("数据：" + data + "\n状态：" + status);
+            });
+        });
+    });
+
+    $(document).ready(function () {
+        $("#bt2").click(function () {
+            $.post("demo-test-post.php", {
+                name: "菜鸟教程",
+                url: "www.runoob.com"
+            }, function (data, status) {
+                alert("数据：\n" + data + "\n状态：" + status);
+            });
+        });
+    });
+    <!--
+        var jq=$.noConflict();
+        jq(document).ready(function () {
+            jq("#bt3").click(function () {
+                jq("#p").text("jQuery 仍在工作！");
+            });
+        });
+        -->
+    $.noConflict();
+    jQuery(document).ready(function ($) {
+        $("bt3").click(function () {
+            $("#p").text("jQuery 仍在工作！");
+        });
+    });
+</script>
+
+</body>
+</html>
