@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>vue-demo</title>
+</head>
+<body>
+
+<p><a href="index.html">返回</a></p>
+
+<div id="app">
+    {{message}}
+    <div v-if="type==='A'">
+        A
+    </div>
+    <div v-else-if="type==='B'">
+        B
+    </div>
+    <div v-else>
+        Not A/B
+    </div>
+    <h1 v-show="ok">Hello!</h1>
+    <ol>
+        <li v-for="todo in todes">
+            {{todo.text}}
+        </li>
+    </ol>
+</div>
+
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+    var data = {message: "hello"};
+    var app = new Vue({
+        el: '#app',
+        //data:data
+        data: {
+            message:"hello!",
+            type:'A',
+            ok:true,
+            todes:[
+                {text:'学习javascript'},
+                {text:'学习Vue'},
+                {text:'整个项目'}
+            ]
+        }
+    });
+    data.message = 'Hello Vue!';
+
+</script>
+
+</body>
+</html>
