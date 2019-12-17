@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>vue-demo</title>
+</head>
+<body>
+
+<p><a href="index.html">返回</a></p>
+<div id="app">
+    <p>{{message}}</p>
+    <!--v-model双向绑定-->
+    <input v-model="message">
+</div>
+
+<div id="app-1">
+    <p>{{message1}}</p>
+    <!--v-on事件监听器-->
+    <button v-on:click="reverseMessage">反转消息</button>
+</div>
+
+<div id="app2">
+    <ol>
+        <tode-item
+        v-for="item in groceryList"
+        v-bind:todo="item"
+        v-bind:key="item.id"></tode-item>
+    </ol>
+</div>
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+    <!--组件-->
+    Vue.component('tode-item', {
+        props: ['todo'],
+        template: '<li>{{todo.text}}</li>'
+    });
+
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue!'
+        }
+    });
+
+    var app1 = new Vue({
+        el: '#app-1',
+        data: {
+            message1: 'Hello Vue.js'
+        },
+        methods: {
+            reverseMessage: function () {
+                this.message1 = this.message1.split('').reverse().join('')
+            }
+        }
+    });
+
+    var app2=new Vue({
+        el:'#app2',
+        data:{
+            groceryList:[
+                {id:0,text:'蔬菜'},
+                {id:1,text:'奶酪'}
+            ]
+        }
+    })
+</script>
+
+</body>
+</html>
