@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>vue-demo</title>
+</head>
+<body>
+
+<p><a href="index.html">返回</a></p>
+
+<div id="app">
+    <!--动态绑定class-->
+    <div
+            v-bind:class="[isActive?'active':'',isGreen?'green':'']"
+            style="width: 200px;height: 100px;text-align: center;line-height: 100px">
+        hi vue
+    </div>
+    <!--绑定内联样式-->
+    <div
+            :style="{color:color,fontsize:size,background:isRed?'#FF0000':''}">
+        hi vue
+    </div>
+
+    <div>
+        <ul>
+            <li v-for="item in items" :key="index">
+                {{item.message}}
+            </li>
+        </ul>
+    </div>
+
+    <div>
+        <ul>
+            <li v-for="key,value in object" :key="key">
+                {{key}}:{{value}}
+            </li>
+        </ul>
+    </div>
+
+    <div id="example-1">
+        <button v-on:dblclick="greet('abc',$event)">Greet</button>
+        <button v-on:click="counter+=1">数值：{{counter}}</button>
+    </div>
+
+    <div>
+        <input v-model="message" placeholder="edit me">
+        <p>Message is:{{message}}</p>
+    </div>
+
+    <button-counter title="title:" @clicknow="clicknow">
+        <h1>hi2...</h1>
+    </button-counter>
+</div>
+
+<script src="../node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+    Vue.component('button-counter', {
+        props: ['title'],
+        data: function () {
+            return {
+                count: 0
+            }
+        },
+        template: '<div><h1>hi...</h1><button @click="clickfun">{{title}}You clicked me {{count}} times</button><slot></slot></div>',
+        methods: {
+            clickfun: function () {
+                this.count++;
+                this.$emit('clicknow', this.count);
+            }
+        }
+    });
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            isActive: true,
+            isGreen: true,
+            color: 'blue',
+            size: '100px',
+            isRed: true,
+            items: [
+                {message: 'Foo'},
+                {message: 'Bar'}
+            ],
+            object: {
+                title: 'How to do lists in Vue',
+                author: 'Jane Doe',
+                publishedAt: '2019-12-24'
+            },
+            counter: 0,
+            name: 'hi',
+            message: ''
+        },
+        methods: {
+            greet: function (str, e) {
+                alert(str);
+                console.log(e);
+            },
+            clicknow: function (e) {
+                console.log(e);
+            }
+        }
+    })
+</script>
+</body>
+<style>
+    .active {
+        background: antiquewhite;
+    }
+
+    .green {
+        color: green;
+    }
+</style>
+</html>
